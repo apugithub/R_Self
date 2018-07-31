@@ -1,0 +1,37 @@
+library(shiny)
+
+
+#--Default UI
+ui <- fluidPage(
+  titlePanel("My Star Wars App"),
+  sidebarLayout(
+    sidebarPanel( 
+      p ("Paragraph test", position = "left", style ="color:blue"),
+      div(strong("DIvvv")),
+      div(strong ("second DIV", style = "color:green")),
+      strong("This is strong", style = "color:red"), div("\n"),
+      
+      tags$div(class = "header", 
+               tags$p("Santanu Header-Click"),
+               tags$a(href = "shiny.rstudio.com/tutorial", "Click Here"),
+               tags$time ()
+             )
+    ),
+    mainPanel(
+      img (src = "rstudio.JPG" , height = 160 , width = 300)
+    )
+  )
+)
+
+
+#-- Server logic 
+server <- function(input,output){}
+  
+
+#--Running the app
+shinyApp(ui = ui, server = server)
+
+##www.rstudio.com
+
+ 
+  
